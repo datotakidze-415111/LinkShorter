@@ -1,0 +1,28 @@
+<body>
+    <div class="sign_section">
+        <div class="section-title">
+            <h3>Sign up and start shortening</h3>
+            <p>Already have an account? <a href="/signin" class="primary-a-irl">Sign in</a></p>
+        </div>
+        <div class="section-box">
+            <%- include('../message/message.ejs') %>
+            <form action="/signuper" method="POST">
+                <div>
+                    <label for="Email">Username</label>
+                    <input type="text" class="primary-input" name="name" placeholder="">
+                </div>
+                <div>
+                    <label for="Email">Email Adress</label>
+                    <input type="email" class="primary-input" name="email" placeholder="">
+                </div>
+                <div>
+                    <label for="Password">Password</label>
+                    <input type="password" class="primary-input" name="password" placeholder="">
+                </div>
+                <div>
+                    <button type="submit" class="long-btn">Sign up</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>

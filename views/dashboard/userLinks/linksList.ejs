@@ -1,0 +1,26 @@
+<div class="dashboard-section">
+    <%- include('../message/message.ejs') %>
+    <div class="list-boxes">
+        <div class="section-title">
+            <h1>Your Short Links List</h1>
+        </div>
+        <% if(results.length == 0) { %> 
+            <h2>List is empty</h2>
+        <% } %>
+        <% results.forEach(function(e){ %>
+            <div class="list-box">
+                <a href="<%- e.shortUrl %>" target="_blank"><%= e.shortUrl%></a>
+                <div class="list-detail">
+                    <p>Visitors: <span><% if(e.visitors > 0) { %>
+                    <%= e.visitors %>
+                    <% } else { %>
+                        0
+                    <% } %> </span></p>
+                </div>
+                <form action="/deleteShortLink/<%= e._id %>" method="POST">
+                    <button class="danger-btn" type="submit">Delete</button>
+                </form>
+            </div> 
+        <% }); %>
+    </div>
+</div>

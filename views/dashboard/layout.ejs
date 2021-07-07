@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Link Shorter Services |</title>
+    <link rel="stylesheet" href="/css/reset.css">
+    <link rel="stylesheet" href="/css/sameElement.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;1,100&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav class="nav">
+            <div class="logo">
+                <h3>Logo</h3>
+            </div>
+            <div class="nav-ul">
+                <span class="closer">&times;</span>
+                <li class="ul-li">
+                    <a href="/guest-dashboard">Dashboard</a>
+                </li>
+                <% if(menuSwitcher) { %> 
+                <li class="ul-li">
+                    <a href="/your-links-list">Your Short Links</a>
+                </li>
+                <li class="ul-li">
+                    <a href="###">Your List</a>
+                </li>
+                <% } %>
+            </div>
+            <div class="sidemenu">
+                <% if(!menuSwitcher) { %>
+                    <a href="/signin" class="primary-a">Login in</a>
+                    <a href="/signup" class="primary-a-irl">Sign up</a>
+                    <a href="/guest-dashboard">
+                        <button class="primary-btn">Get Started</button>
+                    </a>
+                <% } %>
+                <% if(menuSwitcher) { %> 
+                    <form action="/logout" method="POST">
+                        <button class="primary-btn-irl" type="submit">Log out</button>
+                    </form>
+                <% } %>
+            </div>
+            <div class="burger">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <%- body %>
+    </main>
+    <script src="/js/main.js"></script>
+</body>
+</html>
